@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rna-seq
+spec:
+  restartPolicy: Never
+  containers:
+  - name: rna-seq
+    image: kiwenlau/tophat-cufflinks
+    command: ["bowtie2-build"]
