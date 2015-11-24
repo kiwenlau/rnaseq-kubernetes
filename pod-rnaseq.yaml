@@ -8,3 +8,4 @@ spec:
   - name: rna-seq
     image: kiwenlau/tophat-cufflinks
     command: ["bowtie2-build"]
+    
