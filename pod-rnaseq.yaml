@@ -5,7 +5,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-  - name: rna-seq
+  - name: bowtie2-build
     image: kiwenlau/tophat-cufflinks
     command: ["bowtie2-build", "/tmp/rnaseq/data/ggal_1_48850000_49020000.Ggal71.500bpflank.fa", "/tmp/rnaseq/output/index/genome_index"]
     volumeMounts:
