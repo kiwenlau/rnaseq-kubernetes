@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: rnaseq
+  name: bowtie2-build
 spec:
   restartPolicy: Never
   containers:
@@ -9,9 +9,11 @@ spec:
     image: kiwenlau/tophat-cufflinks
     command: ["bowtie2-build", "/tmp/rnaseq/data/ggal_1_48850000_49020000.Ggal71.500bpflank.fa", "/tmp/rnaseq/output/index/genome_index"]
     volumeMounts:
-    - name: redis-persistent-storage
+    - name: rnaseq-data
       mountPath: /tmp/rnaseq
   volumes:
     - hostPath:
         path: /root/mac/rnaseq-kubernetes/rnaseq
-      name: redis-persistent-storage
+      name: rnaseq-data
+
+
