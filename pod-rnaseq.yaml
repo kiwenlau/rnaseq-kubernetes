@@ -7,11 +7,11 @@ spec:
   containers:
   - name: rna-seq
     image: kiwenlau/tophat-cufflinks
-    command: ["bowtie2-build", "/tmp/rnaseq/data/ggal_1_48850000_49020000.Ggal71.500bpflank.fa", "/tmp/rnasoutput/index/genome_index"]
+    command: ["bowtie2-build", "/tmp/rnaseq/data/ggal_1_48850000_49020000.Ggal71.500bpflank.fa", "/tmp/rnaseq/output/index/genome_index"]
     volumeMounts:
     - name: redis-persistent-storage
       mountPath: /tmp/rnaseq
   volumes:
     - hostPath:
+        path: /root/mac/rnaseq-kubernetes/rnaseq
       name: redis-persistent-storage
-      path: /root/mac/rnaseq-kubernetes/rnaseq
