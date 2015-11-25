@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: rna-seq
+  name: rnaseq
 spec:
   restartPolicy: Never
   containers:
